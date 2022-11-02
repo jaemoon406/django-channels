@@ -9,7 +9,7 @@ SECRET_KEY = 'wtle-bvzk2a4y7zp1_bes6dk904pa@!ynh8zsq-atgsn+8gqs!'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     "daphne",
@@ -21,6 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'user',
+    'chat',
 ]
 
 MIDDLEWARE = [
@@ -38,7 +40,7 @@ ROOT_URLCONF = 'django_channels_prac.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -54,7 +56,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'django_channels_prac.wsgi.application'
 ASGI_APPLICATION = 'django_channels_prac.asgi.application'
 
-print(os.environ.get('DB_NAME'), '##########################################################################################################################################################################')
 
 DATABASES = {
     'default': {
